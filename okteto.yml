@@ -1,0 +1,5 @@
+name: hello-world
+command: [ "bash" ]
+workdir: /app
+forward:
+  - 8080:8080
