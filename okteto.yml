@@ -2,8 +2,6 @@ name: hello-world
 image: okteto/hello-world:ruby-dev
 command: [ "bash" ]
 workdir: /opt/app/
-environment:
-  - PORT=8080
 forward:
   - 8080:8080
   - 1234:1234
