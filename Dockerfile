@@ -10,6 +10,7 @@ FROM builder AS dev
 
 RUN gem install ruby-debug-ide
 RUN gem install debase
+RUN gem install rerun
 
 ENV PORT 8080
 EXPOSE 8080
