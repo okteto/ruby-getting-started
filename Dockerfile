@@ -1,10 +1,24 @@
-FROM ruby:2
+FROM ruby:2 AS builder
 
-WORKDIR /app
-COPY Gemfile Gemfile.lock ./
+WORKDIR /opt/app
+COPY Gemfile Gemfile.lock /opt/app/
 RUN bundle install
 
-COPY . .
+#######################################
+
+FROM builder AS dev
+
+RUN gem install ruby-debug-ide
+RUN gem install debase
+
+#######################################
+
+FROM ruby:2 AS production
+
+WORKDIR /opt/app
+COPY --from=builder /usr/local/ /usr/local/
+COPY --from=builder /opt/app/ /opt/app
+COPY . /opt/app/
 
 ENV PORT 8080
 EXPOSE 8080
