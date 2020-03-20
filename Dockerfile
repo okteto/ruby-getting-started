@@ -10,7 +10,7 @@ RUN bundle install
 FROM builder AS dev
 
 ENV APP_ENV development
-ENV RUBYOPT "-W:'no-deprecated'"
+ENV RUBYOPT "-W:no-deprecated"
 
 RUN bundle config set with 'development'
 RUN bundle install
@@ -31,6 +31,6 @@ ENV PORT 8080
 EXPOSE 8080
 
 ENV APP_ENV production
-ENV RUBYOPT "-W:'no-deprecated'"
+ENV RUBYOPT "-W:no-deprecated"
 
 CMD ["ruby", "./app.rb"]

@@ -4,5 +4,6 @@ require 'sinatra/reloader'
 set :bind, '0.0.0.0'
 
 get '/' do
-  "Hello world!"
+  message = 'Hello world!'
+  message
 end
