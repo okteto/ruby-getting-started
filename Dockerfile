@@ -9,6 +9,8 @@ RUN bundle install
 
 FROM builder AS dev
 
+COPY bashrc /root/.bashrc
+
 ENV APP_ENV development
 ENV RUBYOPT "-W:no-deprecated"
 
