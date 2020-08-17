@@ -5,3 +5,5 @@ workdir: /opt/app/
 forward:
   - 8080:8080
   - 1234:1234
+persistentVolume:
+  enabled: false
