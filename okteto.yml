@@ -1,9 +1,9 @@
 name: hello-world
-command: bash
-volumes:
-- /usr/local/bundle/cache
-sync:
-- .:/opt/app
+image: okteto/hello-world:ruby-dev
+command: [ "bash" ]
+workdir: /opt/app/
 forward:
-- 1234:1234
-- 8080:8080
+  - 8080:8080
+  - 1234:1234
+persistentVolume:
+  enabled: false
