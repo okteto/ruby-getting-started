@@ -1,0 +1,9 @@
+name: hello-world
+image: okteto/hello-world:ruby-dev
+command: [ "bash" ]
+workdir: /opt/app/
+forward:
+  - 8080:8080
+  - 1234:1234
+persistentVolume:
+  enabled: false
