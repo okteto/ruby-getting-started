@@ -36,6 +36,4 @@ dev:
     forward:
       - 1234:1234
       - 8080:8080
-    persistentVolume:
-      enabled: false
 
