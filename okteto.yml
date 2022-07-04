@@ -1,18 +1,15 @@
-name: ruby-getting-started
 build:
-  ruby-getting-started:
+  hello-world:
+    image: okteto.dev/ruby-hello-world:1.0.0
     context: .
-    dockerfile: Dockerfile
 deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    image: okteto/hello-world:ruby-dev
-    command: ruby ./app.rb
-    workdir: /opt/app/
+    command: bash # ruby ./app.rb
     sync:
       - .:/opt/app/
     forward:
       - 1234:1234
-      - 8080:8080
-
+    volumes:
+      - /usr/local/bundle/cache
