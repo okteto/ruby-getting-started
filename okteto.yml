@@ -6,7 +6,7 @@ deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    command: bash # ruby ./app.rb
+    command: bash
     sync:
       - .:/opt/app/
     forward:
