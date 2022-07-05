@@ -1,9 +1,15 @@
-name: hello-world
-image: okteto/hello-world:ruby-dev
-command: [ "bash" ]
-workdir: /opt/app/
-forward:
-  - 8080:8080
-  - 1234:1234
-persistentVolume:
-  enabled: false
+build:
+  hello-world:
+    image: okteto.dev/ruby-hello-world:1.0.0
+    context: .
+deploy:
+  - kubectl apply -f k8s.yml
+dev:
+  hello-world:
+    command: bash
+    sync:
+      - .:/opt/app/
+    forward:
+      - 1234:1234
+    volumes:
+      - /usr/local/bundle/cache
