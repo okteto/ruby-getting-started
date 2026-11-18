@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', '~> 2.2'
-gem 'sinatra-contrib', '~> 2.2'
+gem 'sinatra', '~> 4.2'
+gem 'sinatra-contrib', '~> 4.2'
+gem 'rackup', '~> 2.3'
+gem 'webrick', '~> 1.9'
 
 group :development do
-  gem 'ruby-debug-ide', '~> 0.7.0'
+  gem 'ruby-debug-ide', '~> 0.7.5'
 end

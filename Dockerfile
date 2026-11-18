@@ -1,4 +1,4 @@
-FROM ruby:2 AS builder
+FROM ruby:4 AS builder
 
 WORKDIR /opt/app
 COPY Gemfile Gemfile.lock /opt/app/
@@ -22,7 +22,7 @@ EXPOSE 8080
 
 #######################################
 
-FROM ruby:2 AS production
+FROM ruby:4 AS production
 
 WORKDIR /opt/app
 COPY --from=builder /usr/local/ /usr/local/
