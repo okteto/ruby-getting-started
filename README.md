@@ -1,5 +1,5 @@
 # Getting Started with Okteto and Ruby
 
-This example shows how to use Okteto to develop a Ruby Sample App directly in Kubernetes. The Ruby Sample App is deployed using Kubernetes manifests.
+This sample shows how to build, deploy, test, and develop a Ruby application on Kubernetes with [Okteto](https://www.okteto.com). Okteto builds its application and development images from the `Dockerfile`, runs its unit tests in a Test Container, and replaces it with a Development Container that has hot reload and a debugger.
 
-This is the application used for the [Getting Started on Okteto with Ruby Apps in Kubernetes](https://www.okteto.com/docs/samples/ruby/) tutorial.
+Follow the [Getting Started with Okteto and Ruby](https://www.okteto.com/docs/development/containers/ruby/) guide.
