@@ -1,6 +1,7 @@
-.git
-.dockerignore
-Dockerfile
-okteto.yaml
-README.md
-vendor/bundle
+# Send only what "bundle install" and the application need to the build context.
+# Anything else (.git, manifests, docs) would bloat the images and
+# invalidate the build cache on every unrelated change.
+*
+!Gemfile
+!Gemfile.lock
+!**/*.rb
