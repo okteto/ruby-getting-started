@@ -14,10 +14,19 @@ class AppTest < Minitest::Test
     Sinatra::Application
   end
 
-  def test_hello_world
+  def test_info
+    get '/api/info'
+
+    assert_equal 200, last_response.status
+    info = JSON.parse(last_response.body)
+    assert_equal app.settings.message, info['message']
+    assert info['runtime'].start_with?('Ruby '), "runtime = #{info['runtime'].inspect}, want the Ruby version"
+  end
+
+  def test_page
     get '/'
 
     assert_equal 200, last_response.status
-    assert_equal 'Hello world!', last_response.body
+    assert_includes last_response.body, 'id="message"', "the page doesn't show the message"
   end
 end
